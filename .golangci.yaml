@@ -70,25 +70,25 @@ linters:
     - goimports
     - goprintffuncname
     - gosec
-      #    - gosimple
+    - gosimple
     - gomoddirectives
     - gomodguard  
-      #    - ineffassign
+    - ineffassign
     - misspell
     - nakedret
     - nolintlint
-      #    - rowserrcheck
-      #    - structcheck
-      #    - stylecheck
-      #    - testpackage
-      #    - typecheck
+    - rowserrcheck
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - testpackage
+    - typecheck
       #    - unconvert
       #    - unparam
     - unused
-      #    - varcheck
+    - varcheck
     - whitespace
-      #    - godox
-      #    - staticcheck
+    - godox
       #    - prealloc
 issues:
   # Excluding configuration per-path, per-linter, per-text and per-source

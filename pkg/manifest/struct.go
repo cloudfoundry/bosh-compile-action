@@ -45,9 +45,8 @@ func (m *Manifest) TopLevelPackages() ([]string, error) {
 		for _, p2 := range m.Packages {
 			if p.Name == p2.Name {
 				// skip
-			}
-			// if current package is used as a dependency elsewhere, do not add
-			if arrayContains(p2.Dependencies, p.Name) {
+			} else if arrayContains(p2.Dependencies, p.Name) {
+				// if current package is used as a dependency elsewhere, do not add
 				isDependency = true
 			}
 		}

@@ -13,4 +13,4 @@ inputs:
 
 runs:
   using: "docker"
-  image: "docker://garethjevans/bosh-compile:latest"
+  image: "docker://ghcr.io/cloudfoundry/bosh-compile-action:main"

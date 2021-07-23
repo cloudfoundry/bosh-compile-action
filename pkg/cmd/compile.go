@@ -1,14 +1,15 @@
 package cmd
 
 import (
-	"code.cloudfoundry.org/bosh-compile-action/pkg"
-	"code.cloudfoundry.org/bosh-compile-action/pkg/manifest"
-	"code.cloudfoundry.org/bosh-compile-action/pkg/util"
 	"errors"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
+
+	"code.cloudfoundry.org/bosh-compile-action/pkg"
+	"code.cloudfoundry.org/bosh-compile-action/pkg/manifest"
+	"code.cloudfoundry.org/bosh-compile-action/pkg/util"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

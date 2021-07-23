@@ -1,11 +1,12 @@
 package manifest_test
 
 import (
-	"code.cloudfoundry.org/bosh-compile-action/pkg/manifest"
 	"fmt"
 	"io/ioutil"
 	"path/filepath"
 	"testing"
+
+	"code.cloudfoundry.org/bosh-compile-action/pkg/manifest"
 
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"

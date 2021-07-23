@@ -1,0 +1,51 @@
+---
+env:
+  - GO111MODULE=on
+  - CGO_ENABLED=0
+
+before:
+  hooks:
+    - go mod download
+
+builds:
+  - id: bc-linux
+    main: ./cmd/main.go
+    binary: bc
+    ldflags:
+      - -X code.cloudfoundry.org/bosh-compile-action/pkg/version.Version={{.Version}} -X code.cloudfoundry.org/bosh-compile-action/pkg/version.Revision={{.ShortCommit}} -X code.cloudfoundry.org/bosh-compile-action/pkg/version.BuildDate={{.CommitDate}} -X code.cloudfoundry.org/bosh-compile-action/pkg/version.BuiltBy=goreleaser
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+      - s390x
+      - ppc64le
+
+  - id: bc-darwin
+    main: ./cmd/main.go
+    binary: bc
+    ldflags:
+      - -X code.cloudfoundry.org/bosh-compile-action/pkg/version.Version={{.Version}} -X code.cloudfoundry.org/bosh-compile-action/pkg/version.Revision={{.ShortCommit}} -X code.cloudfoundry.org/bosh-compile-action/pkg/version.BuildDate={{.CommitDate}} -X code.cloudfoundry.org/bosh-compile-action/pkg/version.BuiltBy=goreleaser
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+
+archives:
+  - name_template: "{{ .ProjectName }}-{{ .Os }}-{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+
+checksum:
+  name_template: "{{ .ProjectName }}-checksums.txt"
+  algorithm: sha256
+
+changelog:
+  skip: false
+
+release:
+  draft: false
+  prerelease: false
+  name_template: "{{.Tag}}"

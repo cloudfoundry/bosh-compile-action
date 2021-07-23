@@ -1,0 +1,16 @@
+# action.yml
+name: "bosh-compiler"
+description: "Compiles a bosh release without using a director"
+
+inputs:
+  file:
+    description: "Location of the file to compile"
+    required: true
+  args:
+    description: "Args to pass to the bc command"
+    required: true
+    default: '--guess'
+
+runs:
+  using: "docker"
+  image: "docker://garethjevans/bosh-compile:latest"

@@ -24,13 +24,19 @@ jobs:
       run: make linux
 
     - name: Build Docker
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        tags: cloudfoundry/bc:latest
+        push: false
+
+    - name: Run Tests
       run: |
-        docker build -t garethjevans/bc:test .
-        docker run -it \
+        docker run -t \
           -e INPUT_FILE=/tmp/simple.tgz \
           -e INPUT_ARGS=--guess \
           -v `pwd`/test_releases:/tmp garethjevans/bc:test
-        docker run -it \
+        docker run -t \
           -e INPUT_FILE=/tmp/dependant.tgz \
           -e INPUT_ARGS=--guess \
           -v `pwd`/test_releases:/tmp garethjevans/bc:test

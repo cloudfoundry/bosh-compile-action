@@ -66,5 +66,15 @@ var _ = Describe("E2E", func() {
 				".compiled",
 			},
 		}),
+		Entry("with failing bosh release", CompileRelease{
+			Release:     "failing.tgz",
+			Timeout:     5000,
+			ExpectError: true,
+			Output: []string{
+				"failing -> [failing]",
+				"This should fail",
+				"Unable to execute command = exit status 1",
+			},
+		}),
 	)
 })

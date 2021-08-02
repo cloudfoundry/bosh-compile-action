@@ -1,4 +1,4 @@
-package e2e
+package e2e_test
 
 import (
 	"fmt"
@@ -23,6 +23,7 @@ var _ = Describe("E2E", func() {
 		func(c CompileRelease) {
 			wd, err := os.Getwd()
 			Expect(err).ShouldNot(HaveOccurred())
+			// #nosec G204
 			command := exec.Command("docker",
 				"run",
 				"-t",

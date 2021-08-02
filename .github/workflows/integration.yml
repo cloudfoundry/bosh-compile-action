@@ -25,7 +25,7 @@ jobs:
 
     - name: Build Docker
       run: |
-        docker build -t garethjevans/bc:test .
+        docker build -t garethjevans/bc:test --platform linux/amd64 .
         docker run -it \
           -e INPUT_FILE=/tmp/simple.tgz \
           -e INPUT_ARGS=--guess \

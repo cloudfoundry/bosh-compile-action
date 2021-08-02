@@ -1,1 +1,6 @@
 set -e
+
+echo "Building Dependant Package..."
+
+touch ${BOSH_INSTALL_TARGET}/.compiled
+

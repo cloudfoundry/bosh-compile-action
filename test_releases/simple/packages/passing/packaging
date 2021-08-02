@@ -1,4 +1,3 @@
 set -e
 
-echo "Hello World"
-exit 0
+echo "Building Simple Package..."

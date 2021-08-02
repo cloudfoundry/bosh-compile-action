@@ -1,3 +1,6 @@
-set -e
+set -euo pipefail
 
-ls -la /var/vcap/packages/dependant-package
+echo "Building Top Level Package..."
+DEP=$(readlink -n /var/vcap/packages/dependant-package)
+
+ls -la ${DEP}

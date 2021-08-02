@@ -5,6 +5,8 @@ go 1.15
 require (
 	github.com/fatih/color v1.12.0
 	github.com/mattn/go-isatty v0.0.13 // indirect
+	github.com/onsi/ginkgo v1.16.4
+	github.com/onsi/gomega v1.14.0
 	github.com/prometheus/common v0.29.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.2.1

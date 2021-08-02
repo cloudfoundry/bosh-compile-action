@@ -35,8 +35,8 @@ jobs:
         docker run -t \
           -e INPUT_FILE=/tmp/simple.tgz \
           -e INPUT_ARGS=--guess \
-          -v `pwd`/test_releases:/tmp cloudfoundry/bc:test
+          -v `pwd`/test_releases:/tmp cloudfoundry/bc:latest
         docker run -t \
           -e INPUT_FILE=/tmp/dependant.tgz \
           -e INPUT_ARGS=--guess \
-          -v `pwd`/test_releases:/tmp cloudfoundry/bc:test
+          -v `pwd`/test_releases:/tmp cloudfoundry/bc:latest

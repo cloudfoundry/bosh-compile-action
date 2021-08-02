@@ -1,6 +1,6 @@
 FROM --platform=${BUILDPLATFORM} ubuntu:18.04
 
-RUN apt-get update && apt-get install -y make
+RUN apt-get update && apt-get install -y make ca-certificates
 
 ARG TARGETOS
 ARG TARGETARCH

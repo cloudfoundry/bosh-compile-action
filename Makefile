@@ -24,7 +24,10 @@ lint:
 	golangci-lint run
 
 test:
-	$(GO) test -cover ./...
+	$(GO) test -cover $(PACKAGE_DIRS)
 
-.PHONY: build linux
+e2e:
+	ginkgo run e2e
+
+.PHONY: build linux e2e
 

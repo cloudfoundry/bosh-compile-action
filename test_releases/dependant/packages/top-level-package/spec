@@ -1,0 +1,7 @@
+---
+name: top-level-package
+
+dependencies:
+- dependant-package
+
+files: []

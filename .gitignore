@@ -1,3 +1,5 @@
 build
 dist
 extracted*
+**/dev_releases
+**/.dev_builds

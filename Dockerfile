@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y make ca-certificates
+RUN apt-get update && apt-get install -y build-essential ca-certificates
 
 COPY build/linux/bc /usr/bin/bc
 COPY github-actions-entrypoint.sh /usr/bin/github-actions-entrypoint.sh

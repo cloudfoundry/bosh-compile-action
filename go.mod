@@ -3,11 +3,10 @@ module code.cloudfoundry.org/bosh-compile-action
 go 1.15
 
 require (
-	github.com/fatih/color v1.13.0
+	github.com/fatih/color v1.14.1
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/kr/pretty v0.2.0 // indirect
-	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.19.0
 	github.com/sirupsen/logrus v1.8.1

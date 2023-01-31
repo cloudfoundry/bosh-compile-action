@@ -24,7 +24,7 @@ jobs:
       run: make linux
 
     - name: Build Docker
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         tags: cloudfoundry/bc:latest

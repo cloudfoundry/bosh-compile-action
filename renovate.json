@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:js-app",
+    "regexManagers:dockerfileVersions",
+    ":label(dependencies)",
+    ":automergeAll"
+  ],
+  "transitiveRemediation": true,
+  "postUpdateOptions": [
+    "gomodTidy",
+    "gomodUpdateImportPaths"
+  ],
+  "platformAutomerge": true,
+  "automergeStrategy": "squash",
+  "packageRules": [
+    {
+      "description": "Opt-out minimum Go version updates: https://github.com/renovatebot/renovate/issues/16715",
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchDepTypes": [
+        "golang"
+      ],
+      "enabled": false
+    }
+  ],
+  "nix": {
+    "enabled": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "schedule": [
+    "after 1am and before 7am every weekday"
+  ],
+  "timezone": "Europe/Berlin"
+}

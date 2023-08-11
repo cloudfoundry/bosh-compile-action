@@ -27,7 +27,7 @@ test:
 	$(GO) test -cover $(PACKAGE_DIRS)
 
 e2e:
-	ginkgo run e2e
+	go run github.com/onsi/ginkgo/ginkgo@v1.16.5 run e2e
 
 .PHONY: build linux e2e
 

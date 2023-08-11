@@ -3,7 +3,6 @@ package cmd
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -61,7 +60,7 @@ func (c *CompileCmd) Run() error {
 		return errors.New("nothing to build, use the --packages parameter")
 	}
 
-	tempDir, err := ioutil.TempDir(".", "extracted")
+	tempDir, err := os.MkdirTemp(".", "extracted")
 	if err != nil {
 		return err
 	}
@@ -204,7 +203,7 @@ func isAlreadyBuilt(tempDir string, packageName string) bool {
 
 func readManifest(tempDir string) (manifest.Manifest, error) {
 	manifestPath := filepath.Join(tempDir, "release.MF")
-	yamlFile, err := ioutil.ReadFile(manifestPath)
+	yamlFile, err := os.ReadFile(manifestPath)
 	if err != nil {
 		return manifest.Manifest{}, err
 	}

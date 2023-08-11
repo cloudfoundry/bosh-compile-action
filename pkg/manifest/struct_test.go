@@ -2,7 +2,7 @@ package manifest_test
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"path/filepath"
 	"testing"
 
@@ -62,7 +62,7 @@ func TestDetermineTopLevelPackages(t *testing.T) {
 }
 
 func TestCanParseRealManifest(t *testing.T) {
-	bytes, err := ioutil.ReadFile(filepath.Join("test_data", "release.MF"))
+	bytes, err := os.ReadFile(filepath.Join("test_data", "release.MF"))
 	assert.NoError(t, err)
 
 	m := manifest.Manifest{}
@@ -94,7 +94,7 @@ func TestCanParseRealManifest(t *testing.T) {
 }
 
 func TestCanDetermineBestBuildListFromRealManifest(t *testing.T) {
-	bytes, err := ioutil.ReadFile(filepath.Join("test_data", "release.MF"))
+	bytes, err := os.ReadFile(filepath.Join("test_data", "release.MF"))
 	assert.NoError(t, err)
 
 	m := manifest.Manifest{}
